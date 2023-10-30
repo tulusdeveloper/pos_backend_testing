@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TableNumberController;
 use App\Http\Controllers\CustomerOrderController;
 use App\Http\Controllers\CustomerBillController;
 use App\Http\Controllers\ReceiptController;
@@ -38,6 +39,15 @@ Route::put('/categories/{category}/products/{product}', [ProductController::clas
 Route::delete('/categories/{category}/products/{product}', [ProductController::class, 'destroy']);
 // Route::post('/categories/{category}/uploadIcon', [CategoryController::class, 'uploadIcon']);
 
+
+// Routes for the TablesController
+// Route::group(['prefix' => 'api'], function () {
+    Route::get('table-numbers', [TableNumberController::class, 'index']);
+    Route::post('table-numbers', [TableNumberController::class, 'store']);
+    Route::get('table-numbers/{id}', [TableNumberController::class, 'show']);
+    Route::put('table-numbers/{id}', [TableNumberController::class, 'update']);
+    Route::delete('table-numbers/{id}', [TableNumberController::class, 'destroy']);
+// });
 
 
 
