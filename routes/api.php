@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TableNumberController;
+use App\Http\Controllers\TableOrderController;
 use App\Http\Controllers\CustomerOrderController;
 use App\Http\Controllers\CustomerBillController;
 use App\Http\Controllers\ReceiptController;
@@ -48,6 +49,13 @@ Route::delete('/categories/{category}/products/{product}', [ProductController::c
     Route::put('table-numbers/{id}', [TableNumberController::class, 'update']);
     Route::delete('table-numbers/{id}', [TableNumberController::class, 'destroy']);
 // });
+
+// Table Orders Api
+Route::get('/table-orders', [TableOrderController::class, 'index']);
+Route::post('/table-orders', [TableOrderController::class, 'store']);
+Route::get('/table-orders/{id}', [TableOrderController::class, 'show']);
+Route::put('/table-orders/{id}', [TableOrderController::class, 'update']);
+Route::delete('/table-orders/{id}', [TableOrderController::class, 'destroy']);
 
 
 
